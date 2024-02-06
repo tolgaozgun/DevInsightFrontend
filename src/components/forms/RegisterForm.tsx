@@ -171,7 +171,7 @@ const RegisterForm = () => {
       notifications.show({
         id: 'registration-fail',
         title: t('components:forms:register:registrationFailedTitle'),
-        message: res ? res.msg : t('components:forms:register:registrationFailedMessage'),
+        message: t('components:forms:register:registrationFailedMessage'),
         autoClose: 5000,
         withCloseButton: true,
         style: { backgroundColor: 'red' },
