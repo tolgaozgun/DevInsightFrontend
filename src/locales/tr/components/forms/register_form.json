@@ -1,0 +1,37 @@
+{
+    "title": "Kayıt Ol",
+    "nameLabel": "Ad",
+    "surnameLabel": "Soyad",
+    "usernameLabel": "Kullanıcı Adı",
+    "emailLabel": "E-posta",
+    "passwordLabel": "Şifre",
+    "confirmPasswordLabel": "Şifreyi Onayla",
+    "userTypeLabel": "Kullanıcı Tipi",
+    "userTypePlaceholder": "Kullanıcı tipinizi seçin",
+    "universityLabel": "Üniversite",
+    "universityPlaceholder": "Üniversitenizi seçin",
+    "registerButton": "Kayıt Ol",
+    "loginPrompt": "Zaten bir hesabınız var mı? Giriş Yap",
+    "passwordRequirements": {
+        "minLength": "En az 6 karakter içerir",
+        "number": "Numara içerir",
+        "lowercase": "Küçük harf içerir",
+        "uppercase": "Büyük harf içerir",
+        "specialSymbol": "Özel sembol içerir",
+        "passwordsMatch": "Şifreler eşleşiyor"
+    },
+    "validationMessages": {
+        "nameEmpty": "Ad boş bırakılamaz.",
+        "surnameEmpty": "Soyad boş bırakılamaz.",
+        "usernameEmpty": "Kullanıcı adı boş bırakılamaz.",
+        "invalidEmail": "Geçersiz e-posta.",
+        "passwordEmpty": "Şifre boş bırakılamaz.",
+        "passwordsNotMatching": "Şifreler eşleşmedi",
+        "selectUniversity": "Üniversite seçilmelidir"
+    },
+    "registrationFailedTitle": "Kayıt Başarısız!",
+    "registrationFailedMessage": "Bir şeyler ters gitti. Lütfen daha sonra tekrar deneyin.",
+    "registrationSuccessTitle": "Kayıt Başarılı!",
+    "registrationSuccessMessage": "Başarıyla kayıt oldunuz! Lütfen e-postanızı doğrulayın!"
+  }
+  

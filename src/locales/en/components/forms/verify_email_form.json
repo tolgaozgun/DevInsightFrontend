@@ -1,0 +1,16 @@
+{
+    "invalidEmail": "Invalid email.",
+    "emptyVerificationCode": "Can't leave verification code field empty",
+    "verifyEmailFailedTitle": "Verify email failed!",
+    "verifyEmailFailedMessage": "We have successfully verified your email! We are redirecting you to the login page...",
+    "verifyEmailSuccessTitle": "Verify successful!",
+    "verifyEmailSuccessMessage": "We have successfully verified your email! We are redirecting you to the login page...",
+    "verifyEmailTitle": "Haven't verified your email?",
+    "verificationCodePlaceholder": "Enter your verification code",
+    "yourEmailLabel": "Your email",
+    "yourVerificationCodeLabel": "Your verification code",
+    "backToLoginPage": "Back to the login page",
+    "noVerificationCode": "I don't have a code",
+    "sendVerificationCodeButton": "Send verification code"
+  }
+  

@@ -1,0 +1,16 @@
+{
+    "invalidEmail": "Geçersiz e-posta.",
+    "emptyVerificationCode": "Doğrulama kodu alanını boş bırakamazsınız",
+    "verifyEmailFailedTitle": "E-posta doğrulama başarısız oldu!",
+    "verifyEmailFailedMessage": "E-postanızı başarıyla doğruladık! Sizi giriş sayfasına yönlendiriyoruz...",
+    "verifyEmailSuccessTitle": "Doğrulama başarılı!",
+    "verifyEmailSuccessMessage": "E-postanızı başarıyla doğruladık! Sizi giriş sayfasına yönlendiriyoruz...",
+    "verifyEmailTitle": "E-postanızı doğrulamadınız mı?",
+    "verificationCodePlaceholder": "Doğrulama kodunuzu girin",
+    "yourEmailLabel": "E-postanız",
+    "yourVerificationCodeLabel": "Doğrulama kodunuz",
+    "backToLoginPage": "Giriş sayfasına geri dön",
+    "noVerificationCode": "Kodum yok",
+    "sendVerificationCodeButton": "Doğrulama kodu gönder"
+  }
+  
