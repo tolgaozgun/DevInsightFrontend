@@ -1,0 +1,16 @@
+{
+  "invalidEmail": "Invalid email.",
+  "emptyPassword": "Can't leave password field empty",
+  "loginSuccessful": "Login successful!",
+  "successfullyLoggedIn": "You have successfully logged in!",
+  "loginFailed": "Login failed!",
+  "somethingWentWrong": "Something went wrong",
+  "logInToYourAccount": "Log in to your account",
+  "dontHaveAccount": "Don't have an account? Register",
+  "emailLabel": "Email",
+  "emailPlaceholder": "your@email.com",
+  "passwordLabel": "Password",
+  "passwordPlaceholder": "Your password",
+  "loginButton": "Login",
+  "forgotPassword": "Forgot Password?"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "developerName": "Alex",
+    "commitCount": 120,
+    "closedIssueCount": 30,
+    "codeStickiness": 75,
+    "fixedBugsCount": 45
+  },
+  {
+    "developerName": "Jordan",
+    "commitCount": 90,
+    "closedIssueCount": 45,
+    "codeStickiness": 80,
+    "fixedBugsCount": 50
+  },
+  {
+    "developerName": "Casey",
+    "commitCount": 150,
+    "closedIssueCount": 20,
+    "codeStickiness": 70,
+    "fixedBugsCount": 40
+  },
+  {
+    "developerName": "Taylor",
+    "commitCount": 110,
+    "closedIssueCount": 25,
+    "codeStickiness": 85,
+    "fixedBugsCount": 55
+  }
+]

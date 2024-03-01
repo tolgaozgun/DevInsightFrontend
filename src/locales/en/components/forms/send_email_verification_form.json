@@ -1,0 +1,15 @@
+{
+    "title": "Haven't verified your email?",
+    "instruction": "Enter your email to get a verification code",
+    "emailLabel": "Your email",
+    "emailPlaceholder": "me@mantine.dev",
+    "backToLogin": "Back to the login page",
+    "alreadyHaveCode": "I already have a code",
+    "sendVerificationButton": "Send verification code",
+    "invalidEmail": "Invalid email.",
+    "resendFailedTitle": "Resend email failed!",
+    "resendFailedMessage": "We are sorry, but there was a problem resending your verification email.",
+    "resendSuccessfulTitle": "Resend successful!",
+    "resendSuccessfulMessage": "We have successfully resent your verification email! We are redirecting you to the verification page..."
+  }
+  

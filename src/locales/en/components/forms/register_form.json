@@ -1,0 +1,36 @@
+{
+    "title": "Register",
+    "nameLabel": "Name",
+    "surnameLabel": "Surname",
+    "usernameLabel": "Username",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "userTypeLabel": "User Type",
+    "userTypePlaceholder": "Pick your user type",
+    "universityLabel": "University",
+    "universityPlaceholder": "Pick your university",
+    "registerButton": "Register",
+    "loginPrompt": "Already have an account? Login",
+    "passwordRequirements": {
+      "minLength": "Includes at least 6 characters",
+      "number": "Includes number",
+      "lowercase": "Includes lowercase letter",
+      "uppercase": "Includes uppercase letter",
+      "specialSymbol": "Includes special symbol",
+      "passwordsMatch": "Passwords match"
+    },
+    "validationMessages": {
+      "nameEmpty": "Name cannot be left empty.",
+      "surnameEmpty": "Surname cannot be left empty.",
+      "usernameEmpty": "Username cannot be left empty.",
+      "invalidEmail": "Invalid email.",
+      "passwordEmpty": "Password cannot be left empty.",
+      "passwordsNotMatching": "Passwords did not match",
+      "selectUniversity": "University must be selected"
+    },
+    "registrationFailedTitle": "Registration failed!",
+    "registrationFailedMessage": "Something went wrong. Please try again later.",
+    "registrationSuccessTitle": "Registration successful!",
+    "registrationSuccessMessage": "You have successfully registered! Please verify your email!"
+}

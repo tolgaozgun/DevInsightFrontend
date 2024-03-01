@@ -1,0 +1,17 @@
+{
+    "invalidEmail": "Geçersiz e-posta.",
+    "emptyPassword": "Şifre alanını boş bırakamazsınız",
+    "loginSuccessful": "Giriş başarılı!",
+    "successfullyLoggedIn": "Başarıyla giriş yaptınız!",
+    "loginFailed": "Giriş başarısız!",
+    "somethingWentWrong": "Bir şeyler yanlış gitti",
+    "logInToYourAccount": "Hesabınıza giriş yapın",
+    "dontHaveAccount": "Hesabınız yok mu? Kayıt Olun",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "adiniz@eposta.com",
+    "passwordLabel": "Şifre",
+    "passwordPlaceholder": "Şifreniz",
+    "loginButton": "Giriş Yap",
+    "forgotPassword": "Şifrenizi mi Unuttunuz?"
+}
+  

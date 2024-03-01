@@ -1,0 +1,14 @@
+{
+  "title": "E-postanızı henüz doğrulamadınız mı?",
+  "instruction": "Doğrulama kodu almak için e-postanızı girin",
+  "emailLabel": "E-postanız",
+  "emailPlaceholder": "me@mantine.dev",
+  "backToLogin": "Giriş sayfasına geri dön",
+  "alreadyHaveCode": "Zaten bir kodum var",
+  "sendVerificationButton": "Doğrulama kodu gönder",
+  "invalidEmail": "Geçersiz e-posta.",
+  "resendFailedTitle": "E-posta yeniden gönderme başarısız!",
+  "resendFailedMessage": "Üzgünüz, doğrulama e-postanızı yeniden gönderirken bir sorun oluştu.",
+  "resendSuccessfulTitle": "Yeniden gönderme başarılı!",
+  "resendSuccessfulMessage": "Doğrulama e-postanızı başarıyla yeniden gönderdik! Sizi doğrulama sayfasına yönlendiriyoruz..."
+}
