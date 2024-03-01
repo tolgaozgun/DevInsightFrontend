@@ -19,8 +19,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { RegisterDetails } from '@/types';
 import { useTranslation } from 'react-i18next';
-import { register as registerFn } from '../../services/auth/AuthService';
-import SubtleLinkButton from '../buttons/SubtleLinkButton';
+import { register as registerFn } from '../../../services/auth/AuthService';
+import SubtleLinkButton from '../../buttons/SubtleLinkButton';
 
 function PasswordRequirement({ meets, label }: { meets: boolean; label: string }) {
   return (

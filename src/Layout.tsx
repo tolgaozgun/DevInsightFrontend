@@ -2,6 +2,7 @@ import {
   AppShell,
   AppShellMain,
   AppShellNavbar,
+  AppShellNavbarConfiguration,
   Container,
   rem,
   useMantineColorScheme,
@@ -80,6 +81,13 @@ const Layout = () => {
     // header = <AppShell.Header></AppShell.Header>;
   }
   let headerHeight = header ? 60 : 0;
+  let navbarProps: AppShellNavbarConfiguration = navbar
+    ? {
+        width: 300,
+        breakpoint: 'md',
+        collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
+      }
+    : { width: 0, breakpoint: '' };
 
   return (
     <main className="App">
@@ -87,17 +95,14 @@ const Layout = () => {
         padding="md"
         bg={colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0]}
         header={{ height: headerHeight }}
-        navbar={{
-          width: 300,
-          breakpoint: 'md',
-          collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
-        }}
+        navbar={navbarProps}
         // styles={(theme) => ({
         //   main: {
         //     backgroundColor:
         //       theme.colorScheme === "dark"
         //         ? theme.colors.dark[8]
-        //         : theme.colors.gray[0],
+        //         : theme.colors.gray[0],wh
+
         //   },
         // })}
       >

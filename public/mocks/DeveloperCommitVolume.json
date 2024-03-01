@@ -1,0 +1,22 @@
+[
+  {
+    "developerName": "Alex",
+    "totalCommits": 120,
+    "mostFrequentFiles": ["src/components/Navbar.js", "README.md"]
+  },
+  {
+    "developerName": "Jordan",
+    "totalCommits": 95,
+    "mostFrequentFiles": ["src/utils/helpers.js", "package.json"]
+  },
+  {
+    "developerName": "Taylor",
+    "totalCommits": 105,
+    "mostFrequentFiles": ["src/hooks/useFetch.js", "src/utils/helpers.js"]
+  },
+  {
+    "developerName": "Casey",
+    "totalCommits": 78,
+    "mostFrequentFiles": ["src/components/Navbar.js", "src/utils/helpers.js"]
+  }
+]

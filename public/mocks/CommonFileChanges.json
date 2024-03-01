@@ -1,0 +1,22 @@
+[
+  {
+    "fileGroup": ["src/components/Button.js", "src/styles/Button.css"],
+    "coCommitCount": 12
+  },
+  {
+    "fileGroup": ["src/utils/formatDate.js", "src/utils/constants.js"],
+    "coCommitCount": 9
+  },
+  {
+    "fileGroup": ["README.md", "CONTRIBUTING.md"],
+    "coCommitCount": 5
+  },
+  {
+    "fileGroup": ["src/hooks/useAuth.js", "src/components/Navbar.js", "src/styles/Navbar.css"],
+    "coCommitCount": 7
+  },
+  {
+    "fileGroup": ["package.json", "yarn.lock"],
+    "coCommitCount": 14
+  }
+]

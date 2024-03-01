@@ -1,0 +1,32 @@
+[
+  {
+    "fileName": "src/components/Navbar.js",
+    "commitCount": 14,
+    "contributors": ["Alex", "Jordan", "Casey"],
+    "mostRecentCommit": "2023-04-10T12:47:00Z"
+  },
+  {
+    "fileName": "src/utils/helpers.js",
+    "commitCount": 8,
+    "contributors": ["Taylor", "Casey"],
+    "mostRecentCommit": "2023-04-08T09:30:00Z"
+  },
+  {
+    "fileName": "README.md",
+    "commitCount": 5,
+    "contributors": ["Alex", "Jordan"],
+    "mostRecentCommit": "2023-04-05T15:20:00Z"
+  },
+  {
+    "fileName": "src/hooks/useFetch.js",
+    "commitCount": 10,
+    "contributors": ["Taylor", "Alex"],
+    "mostRecentCommit": "2023-04-07T11:00:00Z"
+  },
+  {
+    "fileName": "package.json",
+    "commitCount": 3,
+    "contributors": ["Jordan"],
+    "mostRecentCommit": "2023-04-03T13:15:00Z"
+  }
+]

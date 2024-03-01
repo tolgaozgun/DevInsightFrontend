@@ -1,10 +1,12 @@
-import LoginForm from "@/components/forms/LoginForm";
-import { Center } from "@mantine/core";
+import LoginForm from '@/components/forms/LoginForm/LoginForm';
+import { Center, Container } from '@mantine/core';
 
 const LoginPage = () => {
   return (
     <Center h="60vh">
-      <LoginForm />
+      <Container>
+        <LoginForm />
+      </Container>
     </Center>
   );
 };

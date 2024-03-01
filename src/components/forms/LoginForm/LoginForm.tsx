@@ -1,11 +1,11 @@
+import { login } from '@/services/auth/AuthService';
 import { Button, Flex, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import SubtleLinkButton from '../buttons/SubtleLinkButton';
-import { login } from '@/services/auth/AuthService';
+import SubtleLinkButton from '../../buttons/SubtleLinkButton';
 
 const LoginForm = () => {
   const { t } = useTranslation();
