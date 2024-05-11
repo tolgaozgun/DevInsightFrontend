@@ -1,5 +1,5 @@
 // ErrorPage.tsx
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Text, Title } from '@mantine/core';
 import React from 'react';
 
 interface ErrorPageProps {
@@ -10,23 +10,23 @@ interface ErrorPageProps {
 
 const ErrorPage: React.FC<ErrorPageProps> = ({ errorCode, message, onGoBack }) => {
   return (
-    <Container component="main" maxWidth="xs">
+    <Container>
       <Box
-        sx={{
+        style={{
           marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
-        <Typography component="h1" variant="h5">
+        <Title component="h1" variant="h5">
           Error {errorCode}
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 2 }}>
+        </Title>
+        <Text variant="body1" style={{ mt: 2 }}>
           {message || 'An error occurred'}
-        </Typography>
+        </Text>
         {onGoBack && (
-          <Button variant="contained" color="primary" onClick={onGoBack} sx={{ mt: 3, mb: 2 }}>
+          <Button variant="contained" color="primary" onClick={onGoBack} style={{ mt: 3, mb: 2 }}>
             Go Back
           </Button>
         )}

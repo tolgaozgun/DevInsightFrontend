@@ -1,13 +1,13 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Text, Title } from '@mantine/core';
 
 const MainPage = () => {
   return (
-    <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-      <Box textAlign="center">
-        <Typography variant="h3" component="h1" gutterBottom>
+    <Container style={{ mt: 4, mb: 4 }}>
+      <Box>
+        <Title variant="h3" component="h1">
           Hello world
-        </Typography>
-        <Typography variant="h6">Hey there! Welcome to the App!</Typography>
+        </Title>
+        <Text variant="h6">Hey there! Welcome to the App!</Text>
       </Box>
     </Container>
   );

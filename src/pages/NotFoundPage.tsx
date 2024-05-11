@@ -1,5 +1,5 @@
 // NotFoundPage.tsx
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Text, Title } from '@mantine/core';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -9,26 +9,26 @@ const NotFoundPage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main">
       <Box
-        sx={{
+        style={{
           marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
-        <Typography component="h1" variant="h5">
+        <Title component="h1" variant="h5">
           {t('pages:notFound:title')}
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 2 }}>
+        </Title>
+        <Text variant="body1" style={{ mt: 2 }}>
           {t('pages:notFound:description')}
-        </Typography>
+        </Text>
         <Button
           variant="contained"
           color="primary"
           onClick={() => navigate('/')}
-          sx={{ mt: 3, mb: 2 }}
+          style={{ mt: 3, mb: 2 }}
         >
           {t('pages:notFound:goToHomeButton')}
         </Button>
