@@ -1,4 +1,4 @@
-import { login } from '@/services/auth/AuthService';
+import { useLogin } from '@/hooks/auth/useLogin';
 import { Button, Flex, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
@@ -9,6 +9,7 @@ import SubtleLinkButton from '../../buttons/SubtleLinkButton';
 
 const LoginForm = () => {
   const { t } = useTranslation();
+  const { login } = useLogin();
   const navigate = useNavigate();
   // const { user, isUserLoading, isUserError } = useUser();
   const form = useForm({
@@ -39,15 +40,7 @@ const LoginForm = () => {
           description: { color: theme.white },
         }),
       });
-
-      // dispatch({type: "LOGIN", payload: data.data});
-
-      // let token = {
-      // 	accessToken: data.data.accessToken,
-      // 	refreshToken: data.data.refreshToken,
-      // }
-
-      navigate('/');
+      navigate('/panel/dashboard');
     },
     onError: (error: any) => {
       notifications.show({

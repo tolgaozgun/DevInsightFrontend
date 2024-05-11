@@ -2,12 +2,12 @@ import { AxiosInstance } from 'axios';
 
 import axios from 'axios';
 import { baseUrl } from '../../constants/api';
-import { RegisterDetails, Tokens, UserModel } from '../../types';
+import { RLogin, RegisterDetails, Tokens, UserModel } from '../../types';
 import { Response } from '../../types/ResponseTypes';
 
 export async function login(email: string, password: string): Promise<Response<UserModel>> {
   const res = await axios
-    .post<Response<UserModel>>(`${baseUrl}/auth/login`, {
+    .post<Response<RLogin>>(`${baseUrl}/auth/login`, {
       email,
       password,
     })
@@ -20,13 +20,19 @@ export async function login(email: string, password: string): Promise<Response<U
   return res.data;
 }
 
-export async function logout() {
-  const res = await axios.post<Response<null>>(`${baseUrl}/auth/logout`).catch((err) => {
-    if (err.response) {
-      return err.response;
-    }
-    return err;
-  });
+export async function logout(accessToken: string | null) {
+  const res = await axios
+    .post<Response<null>>(`${baseUrl}/auth/logout`, null, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+    .catch((err) => {
+      if (err.response) {
+        return err.response;
+      }
+      return err;
+    });
   return res.data;
 }
 
@@ -42,11 +48,8 @@ export async function register(userDetails: RegisterDetails): Promise<Response<U
   return res.data;
 }
 
-export async function refresh(
-  refreshToken: string,
-  axiosSecure: AxiosInstance
-): Promise<Response<Tokens>> {
-  const res = await axiosSecure
+export async function refresh(refreshToken: string): Promise<Response<Tokens>> {
+  const res = await axios
     .get<Response<Tokens>>(`${baseUrl}/auth/refresh`, {
       withCredentials: true,
       headers: {
@@ -63,13 +66,11 @@ export async function refresh(
 }
 
 export async function getCurrentUser(axiosSecure: AxiosInstance): Promise<Response<UserModel>> {
-  const res = await axiosSecure
-    .get<Response<UserModel>>(`${baseUrl}/auth/current-user`)
-    .catch((err) => {
-      if (err.response) {
-        return err.response;
-      }
-      return err;
-    });
+  const res = await axiosSecure.get<Response<UserModel>>(`${baseUrl}/auth/me`).catch((err) => {
+    if (err.response) {
+      return err.response;
+    }
+    return err;
+  });
   return res.data;
 }

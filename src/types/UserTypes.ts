@@ -4,8 +4,9 @@ export type UserModel = {
   username: string;
   email: string;
   picture: string;
-  accessToken?: string;
-  refreshToken?: string;
+  role: string;
+  accessToken: string;
+  refreshToken: string;
 };
 
 export type RegisterDetails = {
@@ -13,4 +14,10 @@ export type RegisterDetails = {
   username: string;
   email: string;
   password: string;
+};
+
+export type RLogin = {
+  user: UserModel;
+  accessToken: string;
+  refreshToken: string;
 };

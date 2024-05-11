@@ -1,5 +1,6 @@
 'use client';
 
+import { useLogout } from '@/hooks/auth/useLogout';
 import {
   ActionIcon,
   Avatar,
@@ -16,7 +17,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { upperFirst, useMediaQuery } from '@mantine/hooks';
-import { showNotification } from '@mantine/notifications';
+import { notifications, showNotification } from '@mantine/notifications';
 import {
   IconBell,
   IconCircleHalf2,
@@ -28,6 +29,7 @@ import {
   IconSearch,
   IconSunHigh,
 } from '@tabler/icons-react';
+import { useNavigate } from 'react-router-dom';
 import LanguagePicker from '../LanguagePicker';
 import SpotlightSearch from '../SpotlightSearch';
 
@@ -142,6 +144,8 @@ const HeaderNav = (props: HeaderNavProps) => {
   const laptop_match = useMediaQuery('(max-width: 992px)');
   const tablet_match = useMediaQuery('(max-width: 768px)');
   const mobile_match = useMediaQuery('(max-width: 425px)');
+  const navigate = useNavigate();
+  const { logout } = useLogout(navigate);
 
   const messages = MESSAGES.map((m) => (
     <Menu.Item
@@ -175,7 +179,7 @@ const HeaderNav = (props: HeaderNavProps) => {
     </Menu.Item>
   ));
 
-  const notifications = NOTIFICATIONS.slice(0, 3).map((n) => (
+  const currentNotifications = NOTIFICATIONS.slice(0, 3).map((n) => (
     <Menu.Item
       key={n.id}
       style={{
@@ -197,6 +201,15 @@ const HeaderNav = (props: HeaderNavProps) => {
       </Flex>
     </Menu.Item>
   ));
+
+  const onLogout = () => {
+    logout();
+    notifications.show({
+      title: 'Logged out',
+      message: 'You have been successfully logged out',
+      color: 'blue',
+    });
+  };
 
   const handleColorSwitch = (mode: 'light' | 'dark' | 'auto') => {
     setColorScheme(mode);
@@ -285,14 +298,14 @@ const HeaderNav = (props: HeaderNavProps) => {
             <Menu.Label tt="uppercase" ta="center" fw={600}>
               {NOTIFICATIONS.length} new notifications
             </Menu.Label>
-            {notifications}
+            {currentNotifications}
             <Menu.Item tt="uppercase" ta="center" fw={600}>
               Show all notifications
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>
         <Tooltip label="Logout">
-          <ActionIcon>
+          <ActionIcon onClick={onLogout}>
             <IconPower size={ICON_SIZE} />
           </ActionIcon>
         </Tooltip>

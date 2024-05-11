@@ -1,48 +1,22 @@
-import { useUser } from '../../contexts/UserContext';
+import Cookies from 'js-cookie';
 import { refresh as refreshFn } from '../../services/auth';
-import { axiosSecure } from '../../services/axios';
+import useGetToken from './useGetToken';
 
 export const useRefresh = () => {
-  const { user } = useUser();
-
-  const token = {
-    accessToken: user?.accessToken,
-    refreshToken: user?.refreshToken,
-  };
+  const { accessToken, refreshToken } = useGetToken();
 
   const refresh = async () => {
-    if (!token) {
+    if (!refreshToken) {
       return null;
     }
 
-    if (!token.refreshToken) {
-      return null;
+    const res = await refreshFn(refreshToken);
+
+    if (res.status !== 200 || !res.data || !res.data.accessToken) {
+      return res;
     }
 
-    const res = await refreshFn(token.refreshToken, axiosSecure);
-
-    return res;
-  };
-
-  return refresh;
-};
-
-export const useRefreshWithToken = (accessToken: string, refreshToken: string) => {
-  const token = {
-    accessToken: accessToken,
-    refreshToken: refreshToken,
-  };
-
-  const refresh = async () => {
-    if (!token) {
-      return null;
-    }
-
-    if (!token.refreshToken) {
-      return null;
-    }
-
-    const res = await refreshFn(token.refreshToken, axiosSecure);
+    Cookies.set('accessToken', res.data.accessToken, { sameSite: 'strict' });
 
     return res;
   };
