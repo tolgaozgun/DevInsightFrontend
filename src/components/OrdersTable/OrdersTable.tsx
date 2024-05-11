@@ -6,8 +6,8 @@ import { IconSearch } from '@tabler/icons-react';
 import sortBy from 'lodash/sortBy';
 import { DataTable, DataTableProps, DataTableSortStatus } from 'mantine-datatable';
 import { ReactNode, useEffect, useMemo, useState } from 'react';
-import { ErrorAlert } from '../components';
-import { OrderStatus, Orders } from '../types';
+import { ErrorAlert } from '../../components';
+import { OrderStatus, Orders } from '../../types';
 
 type StatusBadgeProps = {
   status: OrderStatus;

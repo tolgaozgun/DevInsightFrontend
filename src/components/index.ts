@@ -1,7 +1,6 @@
-import ErrorAlert from '../components/ErrorAlert';
+import ErrorAlert from '../components/ErrorAlert/ErrorAlert';
 import FileCommitsTable from '../components/FileCommitsTable/FileCommitsTable';
 import FilterDateMenu from '../components/FilterDateMenu/FilterDateMenu';
-import OrdersTable from '../components/OrdersTable/OrdersTable';
 import PageHeader from '../components/PageHeader/PageHeader';
 import ProjectsCard from '../components/ProjectsCard/ProjectsCard';
 import ProjectsTable from '../components/ProjectsTable/ProjectsTable';
@@ -15,7 +14,6 @@ export {
   ErrorAlert,
   FileCommitsTable,
   FilterDateMenu,
-  OrdersTable,
   PageHeader,
   ProjectsCard,
   ProjectsTable,

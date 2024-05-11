@@ -6,8 +6,8 @@ import { IconSearch } from '@tabler/icons-react';
 import sortBy from 'lodash/sortBy';
 import { DataTable, DataTableProps, DataTableSortStatus } from 'mantine-datatable';
 import React, { useEffect, useState } from 'react';
-import { ErrorAlert } from '../components';
-import { FileCommitData } from '../types'; // Assuming FileCommitData is the type you have defined for commit data
+import { ErrorAlert } from '../../components';
+import { FileCommitData } from '../../types'; // Assuming FileCommitData is the type you have defined for commit data
 
 const PAGE_SIZES = [5, 10, 20];
 
