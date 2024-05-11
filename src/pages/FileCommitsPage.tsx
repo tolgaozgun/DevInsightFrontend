@@ -1,7 +1,5 @@
 'use client';
 
-import { FileCommitsTable, PageHeader } from '@/components';
-import useFetchData from '@/hooks/useFetchData';
 import {
   ActionIcon,
   Anchor,
@@ -13,6 +11,8 @@ import {
   Text,
 } from '@mantine/core';
 import { IconDotsVertical } from '@tabler/icons-react';
+import { FileCommitsTable, PageHeader } from '../components';
+import useFetchData from '../hooks/useFetchData';
 
 const PATH_DASHBOARD = '/panel/dashboard';
 

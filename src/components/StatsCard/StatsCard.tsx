@@ -1,6 +1,6 @@
-import { Surface } from '@/components';
 import { Badge, Group, Paper, PaperProps, Text } from '@mantine/core';
 import { IconArrowDownRight, IconArrowUpRight } from '@tabler/icons-react';
+import { Surface } from '../../components';
 import classes from './Stats.module.css';
 
 type StatsCardProps = {

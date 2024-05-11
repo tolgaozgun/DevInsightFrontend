@@ -1,6 +1,5 @@
 'use client';
 
-import { useLogout } from '@/hooks/auth/useLogout';
 import {
   ActionIcon,
   Avatar,
@@ -30,6 +29,7 @@ import {
   IconSunHigh,
 } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
+import { useLogout } from '../../hooks/auth/useLogout';
 import LanguagePicker from '../LanguagePicker';
 import SpotlightSearch from '../SpotlightSearch';
 

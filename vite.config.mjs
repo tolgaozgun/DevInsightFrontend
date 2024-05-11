@@ -19,16 +19,4 @@ export default defineConfig({
     setupFiles: './vitest.setup.mjs',
   },
   // Docker container end
-  build: {
-    rollupOptions: {
-      plugins: [
-        copy({
-          targets: [
-            { src: '404.html', dest: 'dist' }, // configure the source and destination paths
-          ],
-          hook: 'writeBundle', // copy after bundle has been written
-        }),
-      ],
-    },
-  },
 });

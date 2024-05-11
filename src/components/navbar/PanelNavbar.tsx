@@ -1,8 +1,7 @@
-import { useUser } from '@/contexts/UserContext';
+import { PanelItem } from '@/types';
 import { ActionIcon, Code, Flex, Group, ScrollArea, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconX } from '@tabler/icons-react';
-import UserMenuItem from '../UserMenuItem';
 import { LinksGroup } from './NavbarLinksGroup';
 import classes from './PanelNavbar.module.css';
 
@@ -15,7 +14,6 @@ interface PanelNavbarProps {
 export function PanelNavbar({ hidden, panelName, panelData, onClose }: PanelNavbarProps) {
   const theme = useMantineTheme();
   const tablet_match = useMediaQuery('(max-width: 768px)');
-  const { firebaseUser, user, isUserLoading, isUserError } = useUser();
   const links = panelData.map((item) => <LinksGroup {...item} key={item.label} />);
 
   return (
@@ -38,9 +36,7 @@ export function PanelNavbar({ hidden, panelName, panelData, onClose }: PanelNavb
         <div className={classes.linksInner}>{links}</div>
       </ScrollArea>
 
-      <div className={classes.footer}>
-        <UserMenuItem user={user} />
-      </div>
+      <div className={classes.footer}>{/* <UserMenuItem user={user} /> */}</div>
     </nav>
   );
 }

@@ -1,9 +1,5 @@
 'use client';
 
-import { PageHeader } from '@/components';
-import CodeStickinessTable from '@/components/CodeStickinessTable/CodeStickinessTable';
-import EffectiveDeveloperTable from '@/components/EffectiveDeveloperTable/EffectiveDeveloperTable';
-import useFetchData from '@/hooks/useFetchData';
 import {
   ActionIcon,
   Anchor,
@@ -15,6 +11,9 @@ import {
   Text,
 } from '@mantine/core';
 import { IconDotsVertical } from '@tabler/icons-react';
+import { PageHeader } from '../components';
+import EffectiveDeveloperTable from '../components/EffectiveDeveloperTable/EffectiveDeveloperTable';
+import useFetchData from '../hooks/useFetchData';
 
 const PATH_DASHBOARD = '/panel/dashboard';
 
@@ -62,7 +61,11 @@ function EffectiveDeveloperPage() {
                 <IconDotsVertical size={18} />
               </ActionIcon>
             </Group>
-            <EffectiveDeveloperTable data={ordersData} error={ordersError} loading={ordersLoading} />
+            <EffectiveDeveloperTable
+              data={ordersData}
+              error={ordersError}
+              loading={ordersLoading}
+            />
           </Paper>
         </Stack>
       </Container>

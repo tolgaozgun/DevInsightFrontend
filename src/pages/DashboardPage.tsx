@@ -1,9 +1,9 @@
 'use client';
 
-import { PageHeader, ProjectsTable, RevenueChart, StatsGrid } from '@/components';
-import useFetchData from '@/hooks/useFetchData';
 import { Button, Container, Grid, Group, Paper, PaperProps, Stack, Text } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons-react';
+import { PageHeader, ProjectsTable, RevenueChart, StatsGrid } from '../components';
+import useFetchData from '../hooks/useFetchData';
 
 const PAPER_PROPS: PaperProps = {
   p: 'md',

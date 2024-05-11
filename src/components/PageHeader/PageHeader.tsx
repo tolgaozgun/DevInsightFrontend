@@ -1,6 +1,5 @@
 'use client';
 
-import { FilterDateMenu, Surface } from '@/components';
 import {
   ActionIcon,
   Breadcrumbs,
@@ -17,6 +16,7 @@ import {
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
 import { IconPlus, IconRefresh } from '@tabler/icons-react';
+import { FilterDateMenu, Surface } from '../../components';
 
 type PageHeaderProps = {
   title: string;

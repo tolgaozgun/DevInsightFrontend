@@ -1,5 +1,5 @@
-import RegisterForm from '@/components/forms/RegisterForm/RegisterForm';
 import { Card, Center } from '@mantine/core';
+import RegisterForm from '../../components/forms/RegisterForm/RegisterForm';
 
 const RegisterPage = () => {
   return (

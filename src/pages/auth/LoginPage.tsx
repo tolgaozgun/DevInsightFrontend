@@ -1,5 +1,5 @@
-import LoginForm from '@/components/forms/LoginForm/LoginForm';
 import { Center, Container } from '@mantine/core';
+import LoginForm from '../../components/forms/LoginForm/LoginForm';
 
 const LoginPage = () => {
   return (

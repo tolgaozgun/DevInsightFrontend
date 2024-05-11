@@ -1,23 +1,13 @@
 'use client';
 
-import React, { ReactNode, useEffect, useMemo, useState } from 'react';
-import {
-  DataTable,
-  DataTableProps,
-  DataTableSortStatus,
-} from 'mantine-datatable';
-import {
-  Badge,
-  MantineColor,
-  MultiSelect,
-  Text,
-  TextInput,
-} from '@mantine/core';
-import sortBy from 'lodash/sortBy';
-import { Orders, OrderStatus } from '@/types';
+import { Badge, MantineColor, MultiSelect, TextInput } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
-import { ErrorAlert } from '@/components';
+import sortBy from 'lodash/sortBy';
+import { DataTable, DataTableProps, DataTableSortStatus } from 'mantine-datatable';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
+import { ErrorAlert } from '../components';
+import { OrderStatus, Orders } from '../types';
 
 type StatusBadgeProps = {
   status: OrderStatus;
@@ -147,10 +137,7 @@ const OrdersTable = ({ data, loading, error }: OrdersTableProps) => {
           }
 
           // @ts-ignore
-          if (
-            selectedStatuses.length &&
-            !selectedStatuses.some((s) => s === status)
-          ) {
+          if (selectedStatuses.length && !selectedStatuses.some((s) => s === status)) {
             return false;
           }
           return true;
@@ -174,11 +161,7 @@ const OrdersTable = ({ data, loading, error }: OrdersTableProps) => {
       selectedRecords={selectedRecords}
       // @ts-ignore
       onSelectedRecordsChange={setSelectedRecords}
-      totalRecords={
-        debouncedQuery || selectedStatuses.length > 0
-          ? records.length
-          : data.length
-      }
+      totalRecords={debouncedQuery || selectedStatuses.length > 0 ? records.length : data.length}
       recordsPerPage={pageSize}
       page={page}
       onPageChange={(p) => setPage(p)}

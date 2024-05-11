@@ -19,7 +19,7 @@ const UserContext = createContext<{
 
 // Create a UserProvider component to wrap your app with the context
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const axiosSecure = useAxiosSecure(false);
+  const axiosSecure = useAxiosSecure();
   const { data: data, isLoading: isLoading, isError: isError } = useGetUser(axiosSecure);
 
   let user = data ? data.data : null;

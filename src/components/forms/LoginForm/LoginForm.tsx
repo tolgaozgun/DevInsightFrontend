@@ -1,17 +1,16 @@
-import { useLogin } from '@/hooks/auth/useLogin';
 import { Button, Flex, PasswordInput, Stack, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useLogin } from '../../../hooks/auth/useLogin';
 import SubtleLinkButton from '../../buttons/SubtleLinkButton';
 
 const LoginForm = () => {
   const { t } = useTranslation();
   const { login } = useLogin();
   const navigate = useNavigate();
-  // const { user, isUserLoading, isUserError } = useUser();
   const form = useForm({
     initialValues: {
       email: '',

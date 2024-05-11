@@ -1,6 +1,6 @@
-import { ErrorAlert, StatsCard } from '@/components';
 import { PaperProps, SimpleGrid, Skeleton } from '@mantine/core';
 import { ReactNode } from 'react';
+import { ErrorAlert, StatsCard } from '../../components';
 import classes from './StatsGrid.module.css';
 
 type StatsGridProps = {

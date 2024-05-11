@@ -1,6 +1,5 @@
 'use client';
 
-import { Surface } from '@/components';
 import {
   ActionIcon,
   Group,
@@ -12,6 +11,7 @@ import {
 } from '@mantine/core';
 import { IconDotsVertical } from '@tabler/icons-react';
 import Chart from 'react-apexcharts';
+import { Surface } from '../../components';
 
 type RevenueChartProps = PaperProps;
 

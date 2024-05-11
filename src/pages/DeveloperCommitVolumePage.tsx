@@ -1,8 +1,5 @@
 'use client';
 
-import { PageHeader } from '@/components';
-import DeveloperCommitVolumeTable from '@/components/DeveloperCommitVolumeTable/DeveloperCommitVolumeTable';
-import useFetchData from '@/hooks/useFetchData';
 import {
   ActionIcon,
   Anchor,
@@ -14,6 +11,9 @@ import {
   Text,
 } from '@mantine/core';
 import { IconDotsVertical } from '@tabler/icons-react';
+import { PageHeader } from '../components';
+import DeveloperCommitVolumeTable from '../components/DeveloperCommitVolumeTable/DeveloperCommitVolumeTable';
+import useFetchData from '../hooks/useFetchData';
 
 const PATH_DASHBOARD = '/panel/dashboard';
 
