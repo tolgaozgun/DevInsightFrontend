@@ -4,6 +4,13 @@ export type FileCommitData = {
   contributors: string[];
   mostRecentCommit: string; // Could be ISO 8601 date string for simplicity
 };
+export type CodeReviewEfficiencyData = {
+  repoName: string;
+  averageTimeToMerge: number;
+  averagePRSize: number;
+  reviewCoverage: number;
+  numberOfCommentsPerPR: number;
+};
 
 export type DeveloperCommitVolume = {
   developerName: string;

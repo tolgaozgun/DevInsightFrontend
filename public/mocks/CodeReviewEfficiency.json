@@ -1,0 +1,9 @@
+[
+  {
+    "repoName": "DevInsight",
+    "averageTimeToMerge": 14,
+    "averagePRSize": 5,
+    "reviewCoverage": 0.25,
+    "numberOfCommentsPerPR": 7
+  }
+]
