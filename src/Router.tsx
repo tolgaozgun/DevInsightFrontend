@@ -117,6 +117,10 @@ const router = createBrowserRouter([
                 path: '/panel/developer-performance/stickiness',
                 element: <CodeStickinessPage />,
               },
+              {
+                path: '/panel/code-review/efficiency',
+                element: < />,
+              },
             ],
           },
           {
