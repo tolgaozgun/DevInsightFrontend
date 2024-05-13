@@ -21,3 +21,10 @@ export async function getCommits(axiosSecure: AxiosInstance, qGetRepository: QGe
     .catch((err) => (err.response ? err.response : err));
   return res.data;
 }
+
+export async function getMultipleCommits(axiosSecure: AxiosInstance) {
+  const res = await axiosSecure
+    .get<Response<Commit[]>>(`${baseUrl}/commit/multiple`)
+    .catch((err) => (err.response ? err.response : err));
+  return res.data;
+}

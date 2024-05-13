@@ -39,13 +39,6 @@ const EffectiveDeveloperTable = ({ data, loading, error }: EffectiveDeveloperTab
       header: 'Closed Issues',
       sortable: true,
     },
-
-    {
-      accessor: 'codeStickiness',
-      header: 'Code Stickiness (%)',
-      sortable: true,
-      render: (item: EffectiveDeveloperData) => <span>{item.codeStickiness}%</span>,
-    },
     {
       accessor: 'fixedBugsCount',
       header: 'Fixed Bugs',

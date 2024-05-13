@@ -2,7 +2,8 @@
 
 import { Button, Container, Grid, Group, Paper, PaperProps, Stack, Text } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons-react';
-import { PageHeader, ProjectsTable, RevenueChart, StatsGrid } from '../components';
+import { PageHeader, ProjectsTable, StatsGrid } from '../components';
+import CommitChart from '../components/CommitChart/CommitChart';
 import useAxiosSecure from '../hooks/auth/useAxiosSecure';
 import useRepositories from '../hooks/github/useRepositories';
 import useFetchData from '../hooks/useFetchData';
@@ -50,7 +51,7 @@ const DashboardPage = () => {
               <MapChart {...PAPER_PROPS} />
             </Grid.Col> */}
             <Grid.Col span={{ base: 12, md: 6, lg: 6 }}>
-              <RevenueChart {...PAPER_PROPS} />
+              <CommitChart />
             </Grid.Col>
             {/* <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
               <SalesChart {...PAPER_PROPS} />

@@ -8,7 +8,6 @@ import {
   IconFileCode,
   IconGauge,
   IconMessageCircle,
-  IconRobot,
   IconUserCheck,
 } from '@tabler/icons-react';
 
@@ -74,17 +73,6 @@ export const AdminPanelData: PanelItem[] = [
       { label: 'Collaborative PRs', link: '/panel/collaboration/collaborative-prs' },
       { label: 'Commit Patterns', link: '/panel/collaboration/commit-patterns' },
       { label: 'Active Discussions', link: '/panel/collaboration/active-discussions' },
-    ],
-  },
-  {
-    label: 'AI Enhancements',
-    icon: IconRobot, // Assuming a robot icon for AI features
-    link: '/panel/ai-enhancements',
-    links: [
-      { label: 'Issue Improvements', link: '/panel/ai-enhancements/issue-improvements' },
-      { label: 'PR and Code Improvements', link: '/panel/ai-enhancements/pr-code-improvements' },
-      { label: 'Automatic Code Review', link: '/panel/ai-enhancements/auto-code-review' },
-      { label: 'Javadoc Generation', link: '/panel/ai-enhancements/javadoc-generation' }, // Assuming Javadoc generation is part of PR and Code Improvements
     ],
   },
   {

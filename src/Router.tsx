@@ -18,6 +18,7 @@ import FilesPage from './pages/github/FilesPage';
 import IssuesPage from './pages/github/IssuesPage';
 import PullRequestsPage from './pages/github/PullRequestsPage';
 import RepositoriesPage from './pages/github/RepositoriesPage';
+import MetricsDisplayPage from './pages/MetricsDisplayPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const PrivateOutlet = () => {
@@ -146,6 +147,18 @@ const router = createBrowserRouter([
               {
                 path: '/panel/github-data/contributors',
                 element: <ContributorsPage />,
+              },
+              {
+                path: '/panel/code-review/efficiency',
+                element: <MetricsDisplayPage />,
+              },
+              {
+                path: '/panel/code-review/discussion',
+                element: <MetricsDisplayPage />,
+              },
+              {
+                path: '/panel/code-review/size-coverage',
+                element: <MetricsDisplayPage />,
               },
             ],
           },

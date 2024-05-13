@@ -117,3 +117,8 @@ export type RFileCommitRank = BaseType & {
   fileName: string;
   commitCount: number;
 };
+
+export type RMultipleCommits = BaseType & {
+  repository: Repository;
+  commits: Commit[];
+};

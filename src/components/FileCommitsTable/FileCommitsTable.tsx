@@ -7,7 +7,7 @@ import sortBy from 'lodash/sortBy';
 import { DataTable, DataTableProps, DataTableSortStatus } from 'mantine-datatable';
 import React, { useEffect, useState } from 'react';
 import { ErrorAlert } from '../../components';
-import { FileCommitData, RFileCommitRank } from '../../types'; // Assuming FileCommitData is the type you have defined for commit data
+import { RFileCommitRank } from '../../types'; // Assuming FileCommitData is the type you have defined for commit data
 
 const PAGE_SIZES = [5, 10, 20];
 
@@ -46,7 +46,7 @@ const FileCommitsTable = ({ data, loading, error }: FileCommitsTableProps) => {
     },
     {
       accessor: 'commitCount',
-      render: (item: FileCommitData) => <span>{item.commitCount}</span>,
+      render: (item: RFileCommitRank) => <span>{item.commitCount}</span>,
       sortable: true,
     },
     // {
