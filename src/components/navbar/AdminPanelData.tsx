@@ -4,6 +4,7 @@ import {
   IconActivity,
   IconAdjustments,
   IconAward,
+  IconBrandGithub,
   IconFileCode,
   IconGauge,
   IconMessageCircle,
@@ -13,6 +14,19 @@ import {
 
 export const AdminPanelData: PanelItem[] = [
   { label: 'Dashboard', icon: IconGauge, link: '/panel/dashboard' },
+  {
+    label: 'Github Data',
+    icon: IconBrandGithub,
+    link: '/panel/github-data',
+    links: [
+      { label: 'Repositories', link: '/panel/github-data/repositories' },
+      { label: 'Issues', link: '/panel/github-data/issues' },
+      { label: 'Pull Requests', link: '/panel/github-data/pull-requests' },
+      { label: 'Commits', link: '/panel/github-data/commits' },
+      { label: 'Files', link: '/panel/github-data/files' },
+      { label: 'Contributors', link: '/panel/github-data/contributors' },
+    ],
+  },
   {
     label: 'Commit Analysis',
     icon: IconFileCode,

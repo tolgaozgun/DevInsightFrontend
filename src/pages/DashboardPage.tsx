@@ -3,6 +3,8 @@
 import { Button, Container, Grid, Group, Paper, PaperProps, Stack, Text } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons-react';
 import { PageHeader, ProjectsTable, RevenueChart, StatsGrid } from '../components';
+import useAxiosSecure from '../hooks/auth/useAxiosSecure';
+import useRepositories from '../hooks/github/useRepositories';
 import useFetchData from '../hooks/useFetchData';
 
 const PAPER_PROPS: PaperProps = {
@@ -12,16 +14,18 @@ const PAPER_PROPS: PaperProps = {
 };
 
 const DashboardPage = () => {
+  const axiosSecure = useAxiosSecure();
   const {
     data: statsData,
     error: statsError,
     loading: statsLoading,
   } = useFetchData('/mocks/StatsGrid.json');
+
   const {
-    data: projectsData,
-    error: projectsError,
-    loading: projectsLoading,
-  } = useFetchData('/mocks/Projects.json');
+    data: repositoriesData,
+    error: repositoriesError,
+    loading: repositoriesLoading,
+  } = useRepositories(axiosSecure);
 
   return (
     <>
@@ -62,9 +66,9 @@ const DashboardPage = () => {
                   </Button>
                 </Group>
                 <ProjectsTable
-                  data={projectsData.slice(0, 6)}
-                  error={projectsError}
-                  loading={projectsLoading}
+                  data={repositoriesData.slice(0, 6)}
+                  error={repositoriesError}
+                  loading={repositoriesLoading}
                 />
               </Paper>
             </Grid.Col>

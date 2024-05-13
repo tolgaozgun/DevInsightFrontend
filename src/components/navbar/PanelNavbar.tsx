@@ -2,6 +2,8 @@ import { PanelItem } from '@/types';
 import { ActionIcon, Code, Flex, Group, ScrollArea, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconX } from '@tabler/icons-react';
+import useAxiosSecure from '../../hooks/auth/useAxiosSecure';
+import RepositoryDropdown from '../RepositoryDropdown/RepositoryDropdown';
 import { LinksGroup } from './NavbarLinksGroup';
 import classes from './PanelNavbar.module.css';
 
@@ -12,6 +14,7 @@ interface PanelNavbarProps {
   onClose: () => void;
 }
 export function PanelNavbar({ hidden, panelName, panelData, onClose }: PanelNavbarProps) {
+  const axiosSecure = useAxiosSecure();
   const theme = useMantineTheme();
   const tablet_match = useMediaQuery('(max-width: 768px)');
   const links = panelData.map((item) => <LinksGroup {...item} key={item.label} />);
@@ -31,6 +34,8 @@ export function PanelNavbar({ hidden, panelName, panelData, onClose }: PanelNavb
           )}
         </Flex>
       </div>
+
+      <RepositoryDropdown />
 
       <ScrollArea className={classes.links}>
         <div className={classes.linksInner}>{links}</div>

@@ -1,3 +1,4 @@
+import { Repository } from '@/types';
 import { Badge, Button, MantineColor } from '@mantine/core';
 import { IconBrandGithub } from '@tabler/icons-react';
 import { DataTable } from 'mantine-datatable';
@@ -33,16 +34,8 @@ const StatusBadge = ({ status }: { status: Status }) => {
   );
 };
 
-type ProjectItem = {
-  id: string;
-  name: string;
-  start_date: string;
-  state: Status;
-  link: string;
-};
-
 type ProjectsTableProps = {
-  data?: ProjectItem[];
+  data?: Repository[];
   error: ReactNode;
   loading: boolean;
 };
@@ -56,17 +49,17 @@ const ProjectsTable = ({ data, error, loading }: ProjectsTableProps) => {
       highlightOnHover
       columns={[
         { accessor: 'name' },
-        { accessor: 'start_date' },
+        { accessor: 'createdAt' },
         {
-          accessor: 'state',
-          render: ({ state }) => <StatusBadge status={state} />,
+          accessor: 'name',
+          render: ({ name }) => <StatusBadge status="In Progress" />,
         },
         {
-          accessor: 'link',
-          render: ({ link }) => (
+          accessor: 'url',
+          render: ({ url }) => (
             <Button
               onClick={() => {
-                window.open(link, '_blank');
+                window.open(url, '_blank');
               }}
               leftSection={<IconBrandGithub />}
             >

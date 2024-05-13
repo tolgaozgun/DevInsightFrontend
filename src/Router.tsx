@@ -12,6 +12,12 @@ import DeveloperCommitVolumePage from './pages/DeveloperCommitVolumePage';
 import EffectiveDeveloperPage from './pages/EffectiveDeveloperPage';
 import ErrorPage from './pages/ErrorPage';
 import FileCommitsPage from './pages/FileCommitsPage';
+import CommitsPage from './pages/github/CommitsPage';
+import ContributorsPage from './pages/github/ContributorsPage';
+import FilesPage from './pages/github/FilesPage';
+import IssuesPage from './pages/github/IssuesPage';
+import PullRequestsPage from './pages/github/PullRequestsPage';
+import RepositoriesPage from './pages/github/RepositoriesPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const PrivateOutlet = () => {
@@ -116,6 +122,30 @@ const router = createBrowserRouter([
               {
                 path: '/panel/developer-performance/stickiness',
                 element: <CodeStickinessPage />,
+              },
+              {
+                path: '/panel/github-data/repositories',
+                element: <RepositoriesPage />,
+              },
+              {
+                path: '/panel/github-data/issues',
+                element: <IssuesPage />,
+              },
+              {
+                path: '/panel/github-data/pull-requests',
+                element: <PullRequestsPage />,
+              },
+              {
+                path: '/panel/github-data/commits',
+                element: <CommitsPage />,
+              },
+              {
+                path: '/panel/github-data/files',
+                element: <FilesPage />,
+              },
+              {
+                path: '/panel/github-data/contributors',
+                element: <ContributorsPage />,
               },
             ],
           },

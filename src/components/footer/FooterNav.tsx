@@ -57,7 +57,7 @@ const FooterNav = () => {
         </Group>
       )}
       <Text c="dimmed" fz="sm" component="a" href={'#'} target="_blank">
-        &copy;&nbsp;{new Date().getFullYear()}&nbsp;Bilkent CS453
+        &copy;&nbsp;{new Date().getFullYear()}&nbsp;DevInsight
       </Text>
     </Group>
   );
