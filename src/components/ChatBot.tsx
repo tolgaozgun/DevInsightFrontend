@@ -33,6 +33,7 @@ function ChatBot() {
 
     const mainElement = document.querySelector('.mantine-AppShell-main');
     const html = mainElement?.innerHTML || '';
+    console.log('HTML: ', html);
     fetchData(html, input);
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInput('');

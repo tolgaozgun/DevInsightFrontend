@@ -21,7 +21,7 @@ Before you begin, ensure you have the following installed on your system:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/CS453-Bilkent/frontend.git
+git clone https://github.com/tolgaozgun/DevinsightFrontend.git
 cd frontend
 ```
 
@@ -38,6 +38,18 @@ Or using npm:
 ```bash
 npm install
 ```
+
+# Configuration
+
+Add the following environment variables to a `.env` file in the root of the project:
+
+```bash
+VITE_BACKEND_URL=http://localhost:8080/dev/api/v1
+VITE_GEMINI_KEY=<GOOGLE_GEMINI_KEY_GOES_HERE>
+```
+
+In order to get a Google Gemini API key, you need to create a project in the Google Cloud Console and enable the Google Gemini API. Then, create an API key and add it to the `.env` file.
+Backend URL is the URL of the backend server that the frontend will communicate with.
 
 # Usage
 

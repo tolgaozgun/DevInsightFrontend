@@ -42,7 +42,6 @@ export const AdminPanelData: PanelItem[] = [
     link: '/panel/developer-performance',
     links: [
       { label: 'Most Effective Developer', link: '/panel/developer-performance/effective' },
-      { label: 'Code Stickiness', link: '/panel/developer-performance/stickiness' },
       { label: 'Bug Fixing Efficiency', link: '/panel/developer-performance/bug-fixing' },
     ],
   },
