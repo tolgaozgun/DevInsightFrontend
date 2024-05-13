@@ -6,7 +6,6 @@ import {
   Burger,
   Flex,
   Group,
-  Indicator,
   MantineTheme,
   Menu,
   Stack,
@@ -18,11 +17,9 @@ import {
 import { upperFirst, useMediaQuery } from '@mantine/hooks';
 import { notifications, showNotification } from '@mantine/notifications';
 import {
-  IconBell,
   IconCircleHalf2,
   IconLayoutSidebarLeftCollapse,
   IconLayoutSidebarLeftExpand,
-  IconMessageCircle,
   IconMoonStars,
   IconPower,
   IconSearch,
@@ -264,7 +261,7 @@ const HeaderNav = (props: HeaderNavProps) => {
           </ActionIcon>
         )}
         <LanguagePicker type="collapsed" />
-        <Menu shadow="lg" width={320}>
+        {/* <Menu shadow="lg" width={320}>
           <Menu.Target>
             <Indicator processing size={10} offset={6}>
               <Tooltip label="Messages">
@@ -283,8 +280,8 @@ const HeaderNav = (props: HeaderNavProps) => {
               Show all messages
             </Menu.Item>
           </Menu.Dropdown>
-        </Menu>
-        <Menu shadow="lg" width={320}>
+        </Menu> */}
+        {/* <Menu shadow="lg" width={320}>
           <Menu.Target>
             <Indicator processing size={10} offset={6}>
               <Tooltip label="Notifications">
@@ -303,7 +300,7 @@ const HeaderNav = (props: HeaderNavProps) => {
               Show all notifications
             </Menu.Item>
           </Menu.Dropdown>
-        </Menu>
+        </Menu> */}
         <Tooltip label="Logout">
           <ActionIcon onClick={onLogout}>
             <IconPower size={ICON_SIZE} />

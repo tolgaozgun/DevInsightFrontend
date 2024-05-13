@@ -1,12 +1,11 @@
-// Types for Enums (assuming possible values based on common patterns)
-enum UserRole {
-  Admin = 'ADMIN',
-  User = 'USER',
-  Guest = 'GUEST',
+// Base type for common fields
+interface BaseType {
+  createdAt: string;
+  updatedAt: string;
 }
 
-// Helper types for relationships
-export type Repository = {
+// Extending base type for all types
+export type Repository = BaseType & {
   id: string; // UUID
   name: string;
   owner: string;
@@ -16,10 +15,9 @@ export type Repository = {
   commits: Commit[];
   files: File[];
   contributors: Contributor[];
-  createdAt: Date;
 };
 
-export type File = {
+export type File = BaseType & {
   id: string; // UUID
   name: string;
   sha: string;
@@ -28,7 +26,7 @@ export type File = {
   fileChanges: FileChange[];
 };
 
-export type Contributor = {
+export type Contributor = BaseType & {
   id: string; // UUID
   url: string;
   avatarUrl: string;
@@ -38,26 +36,24 @@ export type Contributor = {
   pullRequestReviewers: PullRequest[];
 };
 
-export type Issue = {
+export type Issue = BaseType & {
   id: string; // UUID
   issueId: number;
   url: string;
   title: string;
   isClosed: boolean;
-  createdAt: Date; // Using JavaScript Date object
-  closedAt?: Date; // Nullable, indicated by `@Nullable`
+  closedAt?: Date; // Nullable
   closedBy?: Contributor; // Nullable
   severityRating: number;
   contributors: Contributor[];
   repository: Repository;
 };
 
-export type PullRequest = {
+export type PullRequest = BaseType & {
   id: string; // UUID
   pullRequestId: number;
   url: string;
   title: string;
-  createdAt: Date;
   mergedAt?: Date; // Nullable
   numberOfComments: number;
   reviewed: boolean;
@@ -69,7 +65,7 @@ export type PullRequest = {
   assignees: Contributor[];
 };
 
-export type Commit = {
+export type Commit = BaseType & {
   id: string; // UUID
   url: string;
   timestamp: Date;
@@ -81,7 +77,7 @@ export type Commit = {
   changedFiles: File[];
 };
 
-export type FileChange = {
+export type FileChange = BaseType & {
   id: string; // UUID
   additions: number;
   changes: number;
@@ -108,4 +104,16 @@ export type QScrapeRepository = {
 export type QGetRepository = {
   repoName: string;
   repoOwner: string;
+};
+
+export type RMostCommonlyChangedFile = BaseType & {
+  fileName: string[];
+  filePath: string[];
+  changeCount: number;
+};
+
+export type RFileCommitRank = BaseType & {
+  fileId: string; // UUID
+  fileName: string;
+  commitCount: number;
 };

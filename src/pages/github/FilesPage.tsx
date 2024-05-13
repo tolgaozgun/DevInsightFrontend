@@ -18,6 +18,7 @@ function FilesPage() {
     <Container fluid>
       <Stack gap="lg">
         <Title order={2}>Files</Title>
+        <Text>Scrape commits to update the list of files.</Text>
         <Paper {...PAPER_PROPS}>
           <Text size="lg" fw={500} mb="md">
             List of Files

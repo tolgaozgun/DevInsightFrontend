@@ -13,7 +13,8 @@ import {
 import { IconDotsVertical } from '@tabler/icons-react';
 import { PageHeader } from '../components';
 import CommonFileChangesTable from '../components/CommonFileChangesTable/CommonFileChangesTable';
-import useFetchData from '../hooks/useFetchData';
+import useAxiosSecure from '../hooks/auth/useAxiosSecure';
+import useMostCommonlyChangedFile from '../hooks/github/useMostCommonlyChangedFile'; // Updated import
 
 const PATH_DASHBOARD = '/panel/dashboard';
 
@@ -34,20 +35,17 @@ const PAPER_PROPS: PaperProps = {
 };
 
 function CommonFileChangesPage() {
+  const axiosSecure = useAxiosSecure();
   const {
-    data: ordersData,
-    loading: ordersLoading,
-    error: ordersError,
-  } = useFetchData('/mocks/CommonFileChanges.json');
+    data: filesData, // Updated variable name
+    loading: filesLoading, // Updated variable name
+    error: filesError, // Updated variable name
+  } = useMostCommonlyChangedFile(axiosSecure); // Updated hook usage
 
   return (
     <>
       <>
         <title>Common File Changes</title>
-        <meta
-          name="description"
-          content="Explore our versatile dashboard website template featuring a stunning array of themes and meticulously crafted components. Elevate your web project with seamless integration, customizable themes, and a rich variety of components for a dynamic user experience. Effortlessly bring your data to life with our intuitive dashboard template, designed to streamline development and captivate users. Discover endless possibilities in design and functionality today!"
-        />
       </>
       <Container fluid>
         <Stack gap="lg">
@@ -61,7 +59,8 @@ function CommonFileChangesPage() {
                 <IconDotsVertical size={18} />
               </ActionIcon>
             </Group>
-            <CommonFileChangesTable data={ordersData} error={ordersError} loading={ordersLoading} />
+            {/* Updated component to pass new data and state props */}
+            <CommonFileChangesTable data={filesData} error={filesError} loading={filesLoading} />
           </Paper>
         </Stack>
       </Container>

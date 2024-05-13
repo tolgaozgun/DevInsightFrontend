@@ -1,9 +1,8 @@
-// hooks/useIssues.js
 import { Contributor } from '@/types';
 import { AxiosInstance } from 'axios';
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useRepository } from '../../contexts/RepositoryContext';
-import { scrapeContributors } from '../../services/ContributorService';
+import { scrapeContributors as scrapeContributorsService } from '../../services/ContributorService';
 
 const useScrapeContributors = (axiosSecure: AxiosInstance) => {
   const [contributors, setContributors] = useState<Contributor[]>([]);
@@ -11,29 +10,26 @@ const useScrapeContributors = (axiosSecure: AxiosInstance) => {
   const [error, setError] = useState(null);
   const { currentRepository } = useRepository();
 
-  useEffect(() => {
-    const fetchContributors = () => {
-      if (!currentRepository) return;
+  const scrapeContributors = useCallback(async () => {
+    if (!currentRepository) {
+      return;
+    }
 
-      setLoading(true);
-      scrapeContributors(axiosSecure, {
+    setLoading(true);
+    try {
+      const response = await scrapeContributorsService(axiosSecure, {
         repoOwner: currentRepository.owner,
         repoName: currentRepository.name,
-      })
-        .then((data) => {
-          setContributors(data.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setError(err);
-          setLoading(false);
-        });
-    };
+      });
+      setContributors(response.data);
+    } catch (err: any) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  }, [axiosSecure, currentRepository]);
 
-    fetchContributors();
-  }, [currentRepository]); // Dependency array includes currentRepository to retrigger on change
-
-  return { data: contributors, loading, error };
+  return { data: contributors, loading, error, scrapeContributors };
 };
 
 export default useScrapeContributors;

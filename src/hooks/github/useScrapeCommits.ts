@@ -1,40 +1,35 @@
-// hooks/useIssues.js
 import { Commit } from '@/types';
 import { AxiosInstance } from 'axios';
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useRepository } from '../../contexts/RepositoryContext';
-import { scrapeCommits } from '../../services/CommitService';
+import { scrapeCommits as scrapeCommitsService } from '../../services/CommitService';
 
-// hooks/useCommits.js
 const useScrapeCommits = (axiosSecure: AxiosInstance) => {
   const [commits, setCommits] = useState<Commit[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const { currentRepository } = useRepository();
 
-  useEffect(() => {
-    const fetchCommits = () => {
-      if (!currentRepository) return;
+  const scrapeCommits = useCallback(async () => {
+    if (!currentRepository) {
+      return;
+    }
 
-      setLoading(true);
-      scrapeCommits(axiosSecure, {
+    setLoading(true);
+    try {
+      const response = await scrapeCommitsService(axiosSecure, {
         repoOwner: currentRepository.owner,
         repoName: currentRepository.name,
-      })
-        .then((data) => {
-          setCommits(data.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setError(err);
-          setLoading(false);
-        });
-    };
+      });
+      setCommits(response.data);
+    } catch (err: any) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  }, [axiosSecure, currentRepository]);
 
-    fetchCommits();
-  }, [currentRepository]); // Dependency array includes currentRepository to retrigger on change
-
-  return { data: commits, loading, error };
+  return { data: commits, loading, error, scrapeCommits };
 };
 
 export default useScrapeCommits;

@@ -1,9 +1,8 @@
-// hooks/useIssues.js
 import { Issue } from '@/types';
 import { AxiosInstance } from 'axios';
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useRepository } from '../../contexts/RepositoryContext';
-import { scrapeIssues } from '../../services/IssueService';
+import { scrapeIssues as scrapeIssuesService } from '../../services/IssueService';
 
 const useScrapeIssues = (axiosSecure: AxiosInstance) => {
   const [issues, setIssues] = useState<Issue[]>([]);
@@ -11,29 +10,27 @@ const useScrapeIssues = (axiosSecure: AxiosInstance) => {
   const [error, setError] = useState(null);
   const { currentRepository } = useRepository();
 
-  useEffect(() => {
-    const fetchIssues = () => {
-      if (!currentRepository) return;
+  // Define the function that will handle the actual scraping
+  const scrapeIssues = useCallback(async () => {
+    if (!currentRepository) {
+      return;
+    }
 
-      setLoading(true);
-      scrapeIssues(axiosSecure, {
+    setLoading(true);
+    try {
+      const response = await scrapeIssuesService(axiosSecure, {
         repoOwner: currentRepository.owner,
         repoName: currentRepository.name,
-      })
-        .then((data) => {
-          setIssues(data.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setError(err);
-          setLoading(false);
-        });
-    };
+      });
+      setIssues(response.data);
+    } catch (err: any) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  }, [axiosSecure, currentRepository]);
 
-    fetchIssues();
-  }, [currentRepository]); // Dependency array includes currentRepository to retrigger on change
-
-  return { data: issues, loading, error };
+  return { data: issues, loading, error, scrapeIssues };
 };
 
 export default useScrapeIssues;

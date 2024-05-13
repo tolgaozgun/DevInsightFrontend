@@ -1,18 +1,18 @@
 'use client';
 
-import { Text, TextInput } from '@mantine/core';
+import { TextInput } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 import sortBy from 'lodash/sortBy';
 import { DataTable, DataTableProps, DataTableSortStatus } from 'mantine-datatable';
 import React, { useEffect, useState } from 'react';
 import { ErrorAlert } from '../../components';
-import { FileCommitData } from '../../types'; // Assuming FileCommitData is the type you have defined for commit data
+import { FileCommitData, RFileCommitRank } from '../../types'; // Assuming FileCommitData is the type you have defined for commit data
 
 const PAGE_SIZES = [5, 10, 20];
 
 type FileCommitsTableProps = {
-  data: FileCommitData[];
+  data: RFileCommitRank[];
   error?: React.ReactNode;
   loading?: boolean;
 };
@@ -20,7 +20,7 @@ type FileCommitsTableProps = {
 const FileCommitsTable = ({ data, loading, error }: FileCommitsTableProps) => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
-  const [records, setRecords] = useState<FileCommitData[]>([]);
+  const [records, setRecords] = useState<RFileCommitRank[]>([]);
   const [sortStatus, setSortStatus] = useState<DataTableSortStatus>({
     columnAccessor: 'fileName',
     direction: 'asc',
@@ -28,10 +28,10 @@ const FileCommitsTable = ({ data, loading, error }: FileCommitsTableProps) => {
   const [query, setQuery] = useState('');
   const [debouncedQuery] = useDebouncedValue(query, 200);
 
-  const columns: DataTableProps<FileCommitData>['columns'] = [
+  const columns: DataTableProps<RFileCommitRank>['columns'] = [
     {
       accessor: 'fileName',
-      render: (item: FileCommitData) => <span>{item.fileName}</span>,
+      render: (item: RFileCommitRank) => <span>{item.fileName}</span>,
       sortable: true,
       filter: (
         <TextInput
@@ -49,15 +49,15 @@ const FileCommitsTable = ({ data, loading, error }: FileCommitsTableProps) => {
       render: (item: FileCommitData) => <span>{item.commitCount}</span>,
       sortable: true,
     },
-    {
-      accessor: 'contributors',
-      render: (item: FileCommitData) => <Text>{item.contributors.join(', ')}</Text>,
-    },
-    {
-      accessor: 'mostRecentCommit',
-      render: (item: FileCommitData) => <Text>{item.mostRecentCommit}</Text>,
-      sortable: true,
-    },
+    // {
+    //   accessor: 'contributors',
+    //   render: (item: FileCommitData) => <Text>{item.contributors.join(', ')}</Text>,
+    // },
+    // {
+    //   accessor: 'mostRecentCommit',
+    //   render: (item: FileCommitData) => <Text>{item.mostRecentCommit}</Text>,
+    //   sortable: true,
+    // },
   ];
 
   useEffect(() => {

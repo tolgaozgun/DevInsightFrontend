@@ -2,6 +2,7 @@
 import {
   ActionIcon,
   Anchor,
+  Button,
   Container,
   Group,
   Paper,
@@ -14,6 +15,7 @@ import { PageHeader } from '../../components';
 import IssuesTable from '../../components/IssuesTable/IssuesTable'; // Confirm correct import path
 import useAxiosSecure from '../../hooks/auth/useAxiosSecure';
 import useIssues from '../../hooks/github/useIssues'; // Import the new hook
+import useScrapeIssues from '../../hooks/github/useScrapeIssues';
 
 const PATH_DASHBOARD = '/panel/dashboard';
 
@@ -36,12 +38,33 @@ const PAPER_PROPS: PaperProps = {
 function IssuesPage() {
   const axiosSecure = useAxiosSecure();
   const { data: issuesData, loading: issuesLoading, error: issuesError } = useIssues(axiosSecure); // Using the newly implemented hook
+  const {
+    data: scrapedData,
+    loading: scrapeLoading,
+    error: scrapeError,
+    scrapeIssues,
+  } = useScrapeIssues(axiosSecure);
+
+  const handleScrapeIssues = () => {
+    scrapeIssues(); // Call the scraping function when the button is clicked
+  };
+
+  // Issues are the union of the scraped data and the existing data
+  let issues = scrapedData ? [...scrapedData] : [];
+
+  if (issuesData) {
+    issues = [...issues, ...issuesData];
+  }
 
   return (
     <>
       <Container fluid>
         <Stack gap="lg">
           <PageHeader title="Issue Tracker" breadcrumbItems={items} />
+
+          <Button onClick={handleScrapeIssues} loading={scrapeLoading}>
+            Scrape Issues
+          </Button>
           <Paper {...PAPER_PROPS}>
             <Group justify="space-between" mb="md">
               <Text fz="lg" fw={600}>
